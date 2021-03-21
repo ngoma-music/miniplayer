@@ -208,9 +208,7 @@ class _MiniplayerState extends State<Miniplayer> with TickerProviderStateMixin {
                         ),
                       ),
                     ),
-                    onTap: () => _snapToPosition(_dragHeight != widget.maxHeight
-                        ? PanelState.MAX
-                        : PanelState.MIN),
+               
                     onPanStart: (details) {
                       _startHeight = _dragHeight;
                       updateCount = 0;
