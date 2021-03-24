@@ -182,9 +182,10 @@ class _MiniplayerState extends State<Miniplayer> with TickerProviderStateMixin {
                           (BuildContext context, double value, Widget? child) {
                         if (value == 0) return child!;
 
-                        return Opacity(
+                        return AnimatedOpacity(
                           opacity: borderDouble(
                               minRange: 0, maxRange: 1, value: 1 - value * 0.8),
+                          duration: Duration(milliseconds: 200),
                           child: Transform.translate(
                             offset: Offset(0.0, widget.minHeight * value * 0.5),
                             child: child,
@@ -208,7 +209,6 @@ class _MiniplayerState extends State<Miniplayer> with TickerProviderStateMixin {
                         ),
                       ),
                     ),
-               
                     onPanStart: (details) {
                       _startHeight = _dragHeight;
                       updateCount = 0;
